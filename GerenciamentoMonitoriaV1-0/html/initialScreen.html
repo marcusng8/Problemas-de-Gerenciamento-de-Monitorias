@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+        onload = () =>{
+            let btn = document.getElementById('btn-sair');
+            btn.onclick = () =>{
+                localStorage.clear();
+                window.location.replace("http://127.0.0.1:5500/html/index.html");
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/css/initialScreen.css">
+    <script src="/js/initialScreen.js"></script>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">Minhas Atividades</a>
+            <a href="/html/calendario.html">Calendário</a>
+            <a href="#">Consulta de local</a>
+            <a href="#">Videos</a>
+            <a href="#">Sistema de notificações</a>
+            <a href="/html/sistemadeFeedback.html">Sistema de feedback</a>
+        </div>
+          <!-- Use any element to open the sidenav -->
+        <button onclick="openNav()" style="width: 50px;" id="menuBtn"><i class="fas fa-bars"></i></button>
+        <button id="btn-sair">Sair da Conta</button>
+    </header>
+    <section>
+        <div class="well">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Numero</th>
+                  <th>Atividade</th>
+                  <th>Dia</th>
+                  <th>Sala</th>
+                  <th style="width: 36px;"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Mark</td>
+                  <td>Tompson</td>
+                  <td>the_mark7</td>
+                  
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Ashley</td>
+                  <td>Jacobs</td>
+                  <td>ash11927</td>
+                  <td>
+                      <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Audrey</td>
+                  <td>Ann</td>
+                  <td>audann84</td>
+                  
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>John</td>
+                  <td>Robinson</td>
+                  <td>jr5527</td>
+                  
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Aaron</td>
+                  <td>Butler</td>
+                  <td>aaron_butler</td>
+                  
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Chris</td>
+                  <td>Albert</td>
+                  <td>cab79</td>
+                  
+                </tr>
+              </tbody>
+            </table>
+        </div>
+    </section>
+</body>
+</html>
