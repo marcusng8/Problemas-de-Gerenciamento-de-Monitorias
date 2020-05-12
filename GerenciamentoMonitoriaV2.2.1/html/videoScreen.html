@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos Screen</title>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"
+        id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="/css/videoScreen.css">
+    <script src="/js/videoScreen.js"></script>
+    <script src="/js/dbVideos.js"></script>
+    <script>
+        onload = () => {
+            let btn = document.getElementById('btn-sair');
+            btn.onclick = () => {
+                localStorage.clear();
+                window.location.replace("http://127.0.0.1:5500/html/index.html");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="/html/initialScreen.html">Minhas Atividades</a>
+            <a href="/html/calendario.html">Calendário</a>
+            <a href="/html/videoScreen.html">Videos</a>
+            <a href="#">Sistema de notificações</a>
+            <a href="/html/sistemadeFeedback.html">Sistema de feedback</a>
+        </div>
+        <!-- Use any element to open the sidenav -->
+        <button onclick="openNav()" style="width: 50px;" id="menuBtn"><i class="fas fa-bars"></i></button>
+        <button id="btn-sair">Sair da Conta</button>
+    </header>
+    <main style="margin: 10px;">
+        <h1>Vídeo aulas</h1>
+        <h3>Monitorias Ciência da computação:</h3>
+        <div id="links-area"></div>
+        <div id="video-area"></div>
+    </main>
+    <footer></footer>
+
+    <script>
+        var aulas = '';
+        for (i = 0; i < db.videos.length; i++) {
+            aulas += `<a id="link-video">${db.videos[i].nome} data: ${db.videos[i].data[0].dia}/${db.videos[i].data[0].mes}/${db.videos[i].data[0].ano}</a><br><br>`
+        }
+        document.getElementById("links-area").innerHTML = aulas;
+        var link = document.getElementById("link-video");
+        var video = `<div id ="video-area"><iframe width="80%" height="290" src="https://www.youtube.com/embed/rdcuOytxjKY" allow="accelerometer;
+                    autoplay; encrypted-media;
+                    gyroscope;
+                    picture-in-picture" frameborder="0" allowfullscreen class="video">
+                </iframe></div>`
+        link.onclick = () =>{
+            document.getElementById("video-area").innerHTML = video;
+        }
+    </script>
+</body>
+
+</html>

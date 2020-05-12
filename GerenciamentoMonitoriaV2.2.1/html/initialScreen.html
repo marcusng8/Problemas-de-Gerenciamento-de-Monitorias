@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="/js/dbAtividadesFake.js"></script>
+  <script>
+    onload = () => {
+      let btn = document.getElementById('btn-sair');
+      btn.onclick = () => {
+        localStorage.clear();
+        window.location.replace("http://127.0.0.1:5500/html/index.html");
+      }
+    }
+  </script>
+  <script src="/js/initialScreen.js"></script>
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet"
+    id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+  <header class="header">
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="/html/initialScreen.html">Minhas Atividades</a>
+      <a href="/html/calendario.html">Calendário</a>
+      <a href="/html/videoScreen.html">Videos</a>
+      <a href="#">Sistema de notificações</a>
+      <a href="/html/sistemadeFeedback.html">Sistema de feedback</a>
+    </div>
+    <!-- Use any element to open the sidenav -->
+    <button onclick="openNav()" style="width: 50px;" id="menuBtn"><i class="fas fa-bars"></i></button>
+    <button id="btn-sair">Sair da Conta</button>
+  </header>
+  <main>
+    <h1 id="titulo">Atividades</h1>
+    <section>
+      <div class="well" id="tabela">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Numero</th>
+              <th>Atividade</th>
+              <th>Dia/Horas</th>
+              <th>Sala</th>
+              <th style="width: 36px;"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>164582</td>
+              <td>Monitoria de Calc I</td>
+              <td>22/02/2020 / 13:20</td>
+              <td>402</td>
+              
+              
+            </tr>
+            <tr>
+              <td>354783</td>
+              <td>Monitoria de TIAW</td>
+              <td>22/02/2020 / 13:20</td>
+              <td>202</td>
+              
+            </tr>
+            <tr>
+              <td>494576</td>
+              <td>Monitoria de I.C.</td>
+              <td>22/02/2020 / 13:20</td>
+              <td>303</td>
+              
+            </tr>
+            <tr>
+              <td>948756</td>
+              <td>Lorem ipsum dolor sit amet</td>
+              <td>22/02/2020 / 13:20</td>
+              <td>506</td>
+              
+            </tr>
+            <tr>
+              <td>487566</td>
+              <td>Lorem ipsum dolor sit amet</td>
+              <td>22/02/2020 / 13:20</td>
+              <td>304</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer>
+    Copyright 2020() Monitoria Teams
+  </footer>
+
+  <script>
+    var ativ = '';
+    for (i = 0; i < db.dados.length; i++) {
+      ativ += `<tr><td>${db.dados[i].num}</td>
+      <td>${db.dados[i].titulo}</td>
+      <td>${db.dados[i].dia}</td>
+      <td>${db.dados[i].sala}</td></tr>`;
+    }
+    //document.getElementById('lista-ativ').innerHTML = ativ;
+  </script>
+  <link rel="stylesheet" href="/css/initialScreen.css">
+</body>
+
+</html>
